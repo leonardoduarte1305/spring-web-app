@@ -1,0 +1,80 @@
+spring:
+  application:
+    name: spring-web-app
+  main:
+    lazy-initialization: false
+  datasourcemysql1:
+    datasource:
+      driverClassName: com.mysql.cj.jdbc.Driver
+      username: mysql1-user
+      password: password
+      url: jdbc:mysql://localhost:3306/datasourcemysql1?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    liquibase:
+      user: mysql1-admin
+      password: password
+      driverClassName: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/datasourcemysql1?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    hikari:
+      idleTimeout: 60000
+      maximumPoolSize: 20
+      connectionTimeout: 30000
+      schema: public
+    jpa:
+      hibernate:
+        ddl-auto: validate
+      properties:
+        hibernate:
+          format_sql: false
+          show_sql: false
+          dialect: org.hibernate.dialect.MySQLDialect
+  datasourcemysql2:
+    datasource:
+      driverClassName: com.mysql.cj.jdbc.Driver
+      username: mysql2-user
+      password: password
+      url: jdbc:mysql://localhost:3306/datasourcemysql2?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    liquibase:
+      user: mysql2-admin
+      password: password
+      driverClassName: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/datasourcemysql2?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    hikari:
+      idleTimeout: 60000
+      maximumPoolSize: 20
+      connectionTimeout: 30000
+      schema: public
+    jpa:
+      hibernate:
+        ddl-auto: validate
+      properties:
+        hibernate:
+          format_sql: false
+          show_sql: false
+          dialect: org.hibernate.dialect.MySQLDialect
+  datasource-postgres:
+    datasource:
+      driverClassName: org.postgresql.Driver
+      username: postgres-user
+      password: password
+      url: jdbc:postgresql://localhost:5432/datasourcepostgres?useSSL=false&allowPublicKeyRetrieval=true
+    liquibase:
+      user: postgres-admin
+      password: password
+      driverClassName: org.postgresql.Driver
+      url: jdbc:postgresql://localhost:5432/datasourcepostgres?useSSL=false&allowPublicKeyRetrieval=true
+    hikari:
+      idleTimeout: 60000
+      maximumPoolSize: 20
+      connectionTimeout: 30000
+      schema: public
+    jpa:
+      hibernate:
+        ddl-auto: validate
+      properties:
+        hibernate:
+          format_sql: false
+          show_sql: false
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+logging:
+  level:
+    org.springframework.boot.context.properties: DEBUG
